@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Health coaching en español para construir hábitos de bienestar que encajen en tu vida.">
+  <title>Bienestar en equilibrio | Health Coaching</title>
+  <style>
+    :root { --paper: #faf7f0; --ink: #26382c; --forest: #294733; --line: #dbdfd2; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.65 system-ui, sans-serif; }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid #b46a42; outline-offset: 4px; }
+    .wrap { width: min(1120px, calc(100% - 3rem)); margin-inline: auto; }
+    header { border-bottom: 1px solid var(--line); }
+    .nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 2rem; padding-block: 1.1rem; }
+    .brand { font: bold 1.5rem Georgia, serif; text-decoration: none; }
+    .hero { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(2rem, 6vw, 5rem); padding-block: clamp(3rem, 8vw, 6rem); }
+    .label { margin: 0 0 1rem; color: var(--forest); font-size: .8rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    h1, h2, h3 { margin: 0; font-family: Georgia, serif; font-weight: normal; line-height: 1.08; }
+    h1 { font-size: clamp(2.65rem, 6.5vw, 5.3rem); letter-spacing: -.065em; }
+    h2 { font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -.04em; }
+    h3 { font-size: 1.55rem; }
+    .intro { max-width: 33ch; margin-block: 1.5rem; font-size: 1.1rem; }
+    .button { display: inline-block; background: var(--forest); color: #fff; border-radius: 2rem; padding: .75rem 1.35rem; text-decoration: none; font-weight: 650; }
+    .button:hover { background: #3c5b45; }
+    .hero img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 48% 48% 1rem 1rem; background: #e5ebdd; }
+    .approach { background: #e9eee2; padding-block: clamp(3rem, 7vw, 5rem); }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+    article { background: var(--paper); padding: 1.6rem; border-radius: .75rem; }
+    article p { margin: .65rem 0 0; }
+    footer { padding-block: 1.4rem; font-size: .9rem; }
+    @media (max-width: 720px) {
+      .hero, .cards { grid-template-columns: 1fr; }
+      .hero img { max-width: 28rem; }
+    }
+  </style>
+</head>
+<body id="inicio">
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#inicio">Bienestar en equilibrio</a>
+      <nav aria-label="Navegación principal"><a href="#enfoque">El enfoque</a></nav>
+    </div>
+  </header>
+  <main>
+    <section class="wrap hero" aria-labelledby="titulo">
+      <div>
+        <p class="label">Health coaching</p>
+        <h1 id="titulo">Hábitos que encajan en tu vida.</h1>
+        <p class="intro">Acompañamiento para dar pasos concretos hacia el bienestar, a partir de lo que te importa y al ritmo que puedes sostener.</p>
+        <a class="button" href="#enfoque">Explora el enfoque <span aria-hidden="true">↓</span></a>
+      </div>
+      <img src="./bienestar.jpg" width="900" height="900" alt="Ensalada fresca con aguacate, tomates y verduras">
+    </section>
+    <section class="approach" id="enfoque" aria-labelledby="enfoque-titulo">
+      <div class="wrap">
+        <h2 id="enfoque-titulo">Por dónde empezar</h2>
+        <div class="cards">
+          <article><h3>Alimentación</h3><p>Encuentra formas de comer que disfrutes y que puedas incorporar a tu día a día.</p></article>
+          <article><h3>Movimiento</h3><p>Explora actividades que te gusten y que tengan cabida en tu rutina.</p></article>
+          <article><h3>Descanso</h3><p>Haz espacio para las pausas y para una rutina que te ayude a desconectar.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap">Bienestar en equilibrio · Health Coaching</footer>
+</body>
+</html>
