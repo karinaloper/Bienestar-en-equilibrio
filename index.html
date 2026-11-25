@@ -3,89 +3,146 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Health coaching en español para construir hábitos de bienestar que encajen en tu vida.">
+  <meta name="description" content="Conoce el Método RAÍZ de Karina López: cuatro semanas de health coaching con enfoque en hábitos, alimentación y bienestar digestivo.">
   <link rel="icon" type="image/png" sizes="64x64" href="./favicon.png">
-  <title>Bienestar en equilibrio | Health Coaching</title>
+  <title>Karina López | Método RAÍZ · Health Coaching</title>
   <style>
-    :root { --paper: #faf7f0; --ink: #26382c; --forest: #294733; --line: #dbdfd2; }
+    :root { --paper: #faf7f0; --ink: #26382c; --forest: #294733; --sage: #e9eee2; --line: #d6ddcf; }
     * { box-sizing: border-box; }
     body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.65 system-ui, sans-serif; }
     a { color: inherit; }
-    a:focus-visible { outline: 3px solid #b46a42; outline-offset: 4px; }
+    a:focus-visible { outline: 3px solid #a45f36; outline-offset: 4px; }
     .wrap { width: min(1120px, calc(100% - 3rem)); margin-inline: auto; }
     header { border-bottom: 1px solid var(--line); }
-    .nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 2rem; padding-block: 1.1rem; }
-    .brand { font: bold 1.5rem Georgia, serif; text-decoration: none; }
-    .hero { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(2rem, 6vw, 5rem); padding-block: clamp(3rem, 8vw, 6rem); }
-    .label { margin: 0 0 1rem; color: var(--forest); font-size: .8rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .nav, .nav nav, .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.35rem; }
+    .nav { justify-content: space-between; padding-block: 1rem; }
+    .nav nav a { text-underline-offset: .25em; }
+    .brand { display: inline-flex; align-items: center; gap: .65rem; font: 1.3rem Georgia, serif; text-decoration: none; }
+    .brand img { border-radius: .45rem; }
+    .hero, .about { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(1.5rem, 6vw, 5rem); align-items: center; }
+    .section, .hero { padding-block: clamp(3rem, 7vw, 6rem); }
+    .hero img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 48% 48% 1.25rem 1.25rem; background: var(--sage); }
     h1, h2, h3 { margin: 0; font-family: Georgia, serif; font-weight: normal; line-height: 1.08; }
-    h1 { font-size: clamp(2.65rem, 6.5vw, 5.3rem); letter-spacing: -.065em; }
-    h2 { font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -.04em; }
+    h1 { max-width: 11ch; font-size: clamp(3rem, 7.2vw, 6.2rem); letter-spacing: -.065em; }
+    h2 { font-size: clamp(2.15rem, 4.7vw, 3.75rem); letter-spacing: -.045em; }
     h3 { font-size: 1.55rem; }
-    .intro { max-width: 33ch; margin-block: 1.5rem; font-size: 1.1rem; }
-    .button { display: inline-block; background: var(--forest); color: #fff; border-radius: 2rem; padding: .75rem 1.35rem; text-decoration: none; font-weight: 650; }
+    p { margin: .65rem 0 0; }
+    .label { margin: 0 0 .8rem; font-size: .78rem; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
+    .intro { max-width: 46ch; margin-block: 1.25rem 1.5rem; font-size: 1.125rem; }
+    .button { display: inline-block; padding: .68rem 1.2rem; border: 1px solid transparent; border-radius: 2rem; background: var(--forest); color: white; font-weight: 650; text-decoration: none; }
     .button:hover { background: #3c5b45; }
-    .hero img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 48% 48% 1rem 1rem; background: #e5ebdd; }
-    .approach { background: #e9eee2; padding-block: clamp(3rem, 7vw, 5rem); }
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
-    article { background: var(--paper); padding: 1.6rem; border-radius: .75rem; }
-    article p { margin: .65rem 0 0; }
-    .nav nav { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
-    .guide { padding-block: clamp(3rem, 7vw, 5rem); }
-    .guide-card { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1.5rem 3rem; padding: clamp(1.5rem, 5vw, 3.5rem); border: 1px solid var(--line); border-radius: 1rem; }
-    .guide-description { max-width: 48ch; margin: 1rem 0 0; }
-    .preview-note { margin: 0 0 .5rem; font-size: .875rem; }
-    .guide-price { margin: 0 0 .75rem; font-size: 1.4rem; font-weight: 700; }
-    .guide [hidden] { display: none; }
-    footer { padding-block: 1.4rem; font-size: .9rem; }
-    @media (max-width: 720px) {
-      .hero, .cards, .guide-card { grid-template-columns: 1fr; }
-      .hero img { max-width: 28rem; }
+    .secondary { background: transparent; color: var(--forest); border-color: currentColor; }
+    .secondary:hover { background: var(--sage); }
+    .band { background: var(--sage); }
+    .grid { display: grid; gap: 1rem; margin-block: 1.75rem 0; padding: 0; }
+    .four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card { list-style: none; background: var(--paper); border: 1px solid var(--line); border-radius: .9rem; padding: clamp(1rem, 2.2vw, 1.55rem); }
+    .method-letter { display: block; margin-bottom: .65rem; font: 3.3rem/.9 Georgia, serif; color: #496247; }
+    .guide-card { padding: clamp(1.4rem, 5vw, 3rem); border-radius: 1rem; background: var(--forest); color: white; }
+    .guide-card h3 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+    .guide-card .button { background: var(--paper); color: var(--forest); }
+    .guide-card .button:hover { background: var(--sage); }
+    .price { margin: 0 0 .6rem; font-size: 1.35rem; font-weight: 750; }
+    .note { margin-block: .7rem 0; font-size: .9rem; }
+    footer { border-top: 1px solid var(--line); padding-block: 1.2rem; font-size: .9rem; }
+    @media (max-width: 850px) { .four, .three { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 620px) {
+      .wrap { width: calc(100% - 2rem); }
+      .hero, .about, .four, .three { grid-template-columns: 1fr; }
+      .hero img { max-width: 26rem; }
     }
   </style>
 </head>
 <body id="inicio">
   <header>
     <div class="wrap nav">
-      <a class="brand" href="#inicio">Bienestar en equilibrio</a>
-      <nav aria-label="Navegación principal"><a href="#enfoque">El enfoque</a><a href="#fermentados">Guía de fermentados</a></nav>
+      <a class="brand" href="#inicio"><img src="./favicon.png" width="30" height="30" alt="">Karina López</a>
+      <nav aria-label="Navegación principal">
+        <a href="#enfoque">Método RAÍZ</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
     </div>
   </header>
   <main>
     <section class="wrap hero" aria-labelledby="titulo">
       <div>
-        <p class="label">Health coaching</p>
-        <h1 id="titulo">Hábitos que encajan en tu vida.</h1>
-        <p class="intro">Acompañamiento para dar pasos concretos hacia el bienestar, a partir de lo que te importa y al ritmo que puedes sostener.</p>
-        <a class="button" href="#enfoque">Explora el enfoque <span aria-hidden="true">↓</span></a>
+        <p class="label">Karina López · Health Coach</p>
+        <h1 id="titulo">Volver a ti desde la raíz</h1>
+        <p class="intro">Cuatro semanas para escuchar las señales de tu cuerpo, cuidar tu alimentación y construir hábitos que puedas sostener en tu vida diaria.</p>
+        <div class="actions">
+          <a class="button" href="#enfoque">Conoce el Método RAÍZ</a>
+          <a class="button secondary" href="#contacto">Hablemos</a>
+        </div>
       </div>
-      <img src="./bienestar.jpg" width="900" height="900" alt="Ensalada fresca con aguacate, tomates y verduras">
+      <img src="./bienestar.jpg" width="900" height="900" alt="Ensalada con vegetales frescos">
     </section>
-    <section class="approach" id="enfoque" aria-labelledby="enfoque-titulo">
+
+    <section class="band section" id="enfoque" aria-labelledby="metodo-titulo">
       <div class="wrap">
-        <h2 id="enfoque-titulo">Por dónde empezar</h2>
-        <div class="cards">
-          <article><h3>Alimentación</h3><p>Encuentra formas de comer que disfrutes y que puedas incorporar a tu día a día.</p></article>
-          <article><h3>Movimiento</h3><p>Explora actividades que te gusten y que tengan cabida en tu rutina.</p></article>
-          <article><h3>Descanso</h3><p>Haz espacio para las pausas y para una rutina que te ayude a desconectar.</p></article>
+        <h2 id="metodo-titulo">Método RAÍZ</h2>
+        <p>Una experiencia educativa de cuatro semanas con ejercicios de observación y planificación.</p>
+        <ol class="grid four">
+          <li class="card"><span class="method-letter" aria-hidden="true">R</span><h3>Reconocer</h3><p>Observa tus señales y descubre qué patrones se repiten en tu día a día.</p></li>
+          <li class="card"><span class="method-letter" aria-hidden="true">A</span><h3>Alimentar</h3><p>Prueba comidas y rutinas sencillas que puedas adaptar a tu ritmo.</p></li>
+          <li class="card"><span class="method-letter" aria-hidden="true">Í</span><h3>Integrar</h3><p>Haz espacio para la alimentación, el descanso, el movimiento y tus emociones.</p></li>
+          <li class="card"><span class="method-letter" aria-hidden="true">Z</span><h3>Zarpar</h3><p>Define un plan flexible para seguir practicando lo que te funciona.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="wrap section about" aria-labelledby="karina-titulo">
+      <h2 id="karina-titulo">Soy Karina López</h2>
+      <p>Creé el Método RAÍZ a partir de mi experiencia acompañando a personas a cambiar sus hábitos. Mi enfoque parte del bienestar digestivo y de lo que puedes practicar en tu vida cotidiana, desde organizar tus comidas hasta encontrar una rutina de descanso que puedas sostener.</p>
+    </section>
+
+    <section class="band section" id="servicios" aria-labelledby="servicios-titulo">
+      <div class="wrap">
+        <h2 id="servicios-titulo">Cómo puedo acompañarte</h2>
+        <div class="grid four">
+          <article class="card"><h3>Asesorías privadas</h3><p>Acompañamiento individual para ordenar tus prioridades y definir tus próximos pasos.</p></article>
+          <article class="card"><h3>Clases y talleres</h3><p>Espacios para aprender sobre bienestar digestivo, hábitos y fermentación.</p></article>
+          <article class="card"><h3>Bebidas fermentadas</h3><p>Consulta por las opciones disponibles.</p></article>
+          <article class="card"><h3>Eventos privados</h3><p>Escríbeme para conversar sobre una actividad para tu grupo.</p></article>
         </div>
       </div>
     </section>
-    <section class="wrap guide" id="fermentados" aria-labelledby="fermentados-titulo">
-      <div class="guide-card">
+
+    <section class="wrap section" id="recursos" aria-labelledby="recursos-titulo">
+      <h2 id="recursos-titulo">Recursos para empezar</h2>
+      <div class="grid three">
+        <article class="card"><h3>Cuaderno Método RAÍZ</h3><p>Ejercicios para identificar tus prioridades, observar tus hábitos y diseñar tu plan.</p></article>
+        <article class="card"><h3>Recetario RAÍZ</h3><p>Desayunos, comidas, cenas y snacks con herramientas para planificar la semana y hacer la compra.</p></article>
+        <article class="card"><h3>Bienestar digestivo</h3><p>Material educativo sobre alimentación, digestión y hábitos cotidianos.</p></article>
+      </div>
+      <article class="grid about guide-card" id="fermentados" aria-labelledby="fermentados-titulo">
         <div>
           <p class="label">Guía digital · PDF</p>
-          <h2 id="fermentados-titulo">Guía de fermentados</h2>
-          <p class="guide-description">Una guía de fermentados para principiantes en formato PDF.</p>
+          <h3 id="fermentados-titulo">Fermentados para principiantes</h3>
+          <p>Kéfir de agua y de leche, vegetales fermentados, errores comunes y un plan de inicio de siete días.</p>
         </div>
         <div>
-          <p class="preview-note">Vista previa · Sin cobro</p>
-          <p class="guide-price">$5.99 USD</p>
+          <p class="price">$5.99 USD</p>
           <a class="button" href="https://drive.google.com/uc?export=download&amp;id=1dDw4OhglYPOjlJB6ZYkbgUa4K3JFG7WL">Descargar PDF</a>
+          <p class="note">Vista previa sin cobro. Requiere acceso en Google Drive.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="band section" id="contacto" aria-labelledby="contacto-titulo">
+      <div class="wrap about">
+        <div><h2 id="contacto-titulo">Hablemos</h2><p>Para consultas sobre el Método RAÍZ, asesorías, talleres o disponibilidad.</p></div>
+        <div class="actions">
+          <a class="button" href="https://www.instagram.com/karina.healthcoach/">Instagram</a>
         </div>
       </div>
     </section>
   </main>
-  <footer class="wrap">Bienestar en equilibrio · Health Coaching</footer>
+  <footer class="wrap">
+    <p>Karina López · Bienestar en equilibrio</p>
+    <p>El Método RAÍZ es educativo y no sustituye la atención de un profesional de salud.</p>
+  </footer>
 </body>
 </html>
