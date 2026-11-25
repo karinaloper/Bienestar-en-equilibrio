@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Conoce el Método RAÍZ de Karina López: cuatro semanas de health coaching con enfoque en hábitos, alimentación y bienestar digestivo.">
+  <meta name="description" content="Karina López te acompaña a construir hábitos de alimentación con el Método RAÍZ y te enseña a preparar fermentados en casa.">
   <link rel="icon" type="image/png" sizes="64x64" href="./favicon.png">
   <title>Karina López | Método RAÍZ · Health Coaching</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,11 +11,12 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
   <style>
     :root {
-      --paper: #faf8f2;
+      --paper: #fcf7ed;
       --ink: #262d24;
       --muted: #52594d;
-      --olive: #48533b;
-      --sage: #edf0e6;
+      --olive: #465639;
+      --sage: #e9eddf;
+      --berry: #6b3544;
       --line: #d8dcd0;
       --display: "Instrument Serif", Georgia, serif;
     }
@@ -32,10 +33,14 @@
     .nav nav a:hover { text-decoration: underline; text-underline-offset: .3em; }
     .brand { display: inline-flex; align-items: center; gap: .65rem; font: 1.7rem/1 var(--display); text-decoration: none; }
     .brand img { border-radius: .4rem; }
-    .hero, .about { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 7vw, 6rem); align-items: center; }
+    .about { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 7vw, 6rem); align-items: center; }
     .section { padding-block: clamp(3.75rem, 8vw, 7rem); }
-    .hero { padding-block: clamp(3rem, 6vw, 5rem); }
-    .hero img { display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: .25rem; background: var(--sage); }
+    .hero { padding-block: clamp(2.75rem, 6vw, 5rem); }
+    .hero-copy { max-width: 52rem; margin-inline: auto; text-align: center; }
+    .hero-copy .intro { margin-inline: auto; }
+    .hero-copy .actions { justify-content: center; }
+    .hero-copy .label { color: var(--berry); }
+    .hero img { display: block; margin-top: clamp(1.75rem, 4vw, 3rem); width: 100%; aspect-ratio: 2.05; object-fit: cover; border-radius: .65rem; background: var(--sage); }
     h1, h2, h3 { margin: 0; font-family: var(--display); font-weight: 400; line-height: .98; }
     h1 { font-size: clamp(3.55rem, 8vw, 7.25rem); }
     h1 em { color: var(--olive); font-weight: inherit; }
@@ -66,8 +71,8 @@
       .wrap { width: calc(100% - 2.5rem); }
       .nav { align-items: flex-start; flex-direction: column; }
       .nav nav { gap: .55rem 1rem; }
-      .hero, .about { grid-template-columns: 1fr; }
-      .hero img { max-height: 34rem; }
+      .about { grid-template-columns: 1fr; }
+      .hero img { aspect-ratio: 1.2; }
     }
     @media (max-width: 420px) { .four, .three { grid-template-columns: 1fr; } }
   </style>
@@ -86,16 +91,16 @@
   </header>
   <main>
     <section class="wrap hero" aria-labelledby="titulo">
-      <div>
+      <div class="hero-copy">
         <p class="label">Karina López · Health Coach</p>
-        <h1 id="titulo">Volver a ti <em>desde la raíz</em></h1>
-        <p class="intro">Cuatro semanas para escuchar las señales de tu cuerpo, cuidar tu alimentación y construir hábitos que puedas sostener en tu vida diaria.</p>
+        <h1 id="titulo">Bienestar que empieza <em>en tu cocina</em></h1>
+        <p class="intro">Cuida tu alimentación con hábitos que puedas sostener, aprende a fermentar en casa y encuentra acompañamiento con el Método RAÍZ.</p>
         <div class="actions">
           <a class="button" href="#enfoque">Conoce el Método RAÍZ</a>
-          <a class="button secondary" href="#contacto">Hablemos</a>
+          <a class="button secondary" href="#talleres">Explora los talleres</a>
         </div>
       </div>
-      <img src="./bienestar.jpg?v=wellness" width="1100" height="1375" alt="Cuenco de cerámica con ramas de olivo y lino a la luz del sol">
+      <img src="./bienestar.jpg?v=fermentacion" width="1500" height="844" alt="Manos colocando col y zanahoria ralladas en un frasco de fermentación">
     </section>
 
     <section class="band section" id="enfoque" aria-labelledby="metodo-titulo">
@@ -121,7 +126,7 @@
         <h2 id="servicios-titulo">Cómo puedo acompañarte</h2>
         <div class="grid four">
           <article class="card"><h3>Asesorías privadas</h3><p>Acompañamiento individual para ordenar tus prioridades y definir tus próximos pasos.</p></article>
-          <article class="card"><h3>Clases y talleres</h3><p>Espacios para aprender sobre bienestar digestivo, hábitos y fermentación.</p></article>
+          <article class="card" id="talleres"><h3>Clases y talleres de fermentación</h3><p>Aprende a preparar fermentados en casa y a incorporarlos a tu alimentación.</p><p><a href="#contacto">Consulta por los talleres</a></p></article>
           <article class="card"><h3>Bebidas fermentadas</h3><p>Consulta por las opciones disponibles.</p></article>
           <article class="card"><h3>Eventos privados</h3><p>Escríbeme para conversar sobre una actividad para tu grupo.</p></article>
         </div>
