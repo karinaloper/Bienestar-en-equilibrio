@@ -29,9 +29,15 @@
     .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
     article { background: var(--paper); padding: 1.6rem; border-radius: .75rem; }
     article p { margin: .65rem 0 0; }
+    .nav nav { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
+    .guide { padding-block: clamp(3rem, 7vw, 5rem); }
+    .guide-card { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1.5rem 3rem; padding: clamp(1.5rem, 5vw, 3.5rem); border: 1px solid var(--line); border-radius: 1rem; }
+    .guide-description { max-width: 48ch; margin: 1rem 0 0; }
+    .guide-status { margin: 0; }
+    .guide [hidden] { display: none; }
     footer { padding-block: 1.4rem; font-size: .9rem; }
     @media (max-width: 720px) {
-      .hero, .cards { grid-template-columns: 1fr; }
+      .hero, .cards, .guide-card { grid-template-columns: 1fr; }
       .hero img { max-width: 28rem; }
     }
   </style>
@@ -40,7 +46,7 @@
   <header>
     <div class="wrap nav">
       <a class="brand" href="#inicio">Bienestar en equilibrio</a>
-      <nav aria-label="Navegación principal"><a href="#enfoque">El enfoque</a></nav>
+      <nav aria-label="Navegación principal"><a href="#enfoque">El enfoque</a><a href="#fermentados">Guía de fermentados</a></nav>
     </div>
   </header>
   <main>
@@ -63,7 +69,32 @@
         </div>
       </div>
     </section>
+    <!-- Añade la URL HTTPS de compra a data-checkout-url cuando el producto esté publicado. -->
+    <section class="wrap guide" id="fermentados" aria-labelledby="fermentados-titulo" data-checkout-url="">
+      <div class="guide-card">
+        <div>
+          <p class="label">Guía digital · PDF</p>
+          <h2 id="fermentados-titulo">Guía de fermentados</h2>
+          <p class="guide-description">Explora el mundo de los fermentados con una guía que podrás descargar en tu computadora después de la compra.</p>
+        </div>
+        <div>
+          <p class="guide-status">Disponible próximamente</p>
+          <a class="button guide-checkout" hidden>Comprar la guía</a>
+        </div>
+      </div>
+    </section>
   </main>
   <footer class="wrap">Bienestar en equilibrio · Health Coaching</footer>
+  <script>
+    const guide = document.querySelector("#fermentados");
+    const checkoutUrl = guide.dataset.checkoutUrl.trim();
+
+    if (URL.canParse(checkoutUrl) && new URL(checkoutUrl).protocol === "https:") {
+      const checkout = guide.querySelector(".guide-checkout");
+      checkout.href = checkoutUrl;
+      checkout.hidden = false;
+      guide.querySelector(".guide-status").hidden = true;
+    }
+  </script>
 </body>
 </html>
