@@ -6,52 +6,70 @@
   <meta name="description" content="Conoce el Método RAÍZ de Karina López: cuatro semanas de health coaching con enfoque en hábitos, alimentación y bienestar digestivo.">
   <link rel="icon" type="image/png" sizes="64x64" href="./favicon.png">
   <title>Karina López | Método RAÍZ · Health Coaching</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
   <style>
-    :root { --paper: #faf7f0; --ink: #26382c; --forest: #294733; --sage: #e9eee2; --line: #d6ddcf; }
+    :root {
+      --paper: #faf8f2;
+      --ink: #262d24;
+      --muted: #52594d;
+      --olive: #48533b;
+      --sage: #edf0e6;
+      --line: #d8dcd0;
+      --display: "Instrument Serif", Georgia, serif;
+    }
     * { box-sizing: border-box; }
-    body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.65 system-ui, sans-serif; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.65 "DM Sans", system-ui, sans-serif; }
     a { color: inherit; }
-    a:focus-visible { outline: 3px solid #a45f36; outline-offset: 4px; }
-    .wrap { width: min(1120px, calc(100% - 3rem)); margin-inline: auto; }
+    a:focus-visible { outline: 2px solid #8d552d; outline-offset: 5px; }
+    .wrap { width: min(1160px, calc(100% - 4rem)); margin-inline: auto; }
     header { border-bottom: 1px solid var(--line); }
-    .nav, .nav nav, .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.35rem; }
-    .nav { justify-content: space-between; padding-block: 1rem; }
-    .nav nav a { text-underline-offset: .25em; }
-    .brand { display: inline-flex; align-items: center; gap: .65rem; font: 1.3rem Georgia, serif; text-decoration: none; }
-    .brand img { border-radius: .45rem; }
-    .hero, .about { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(1.5rem, 6vw, 5rem); align-items: center; }
-    .section, .hero { padding-block: clamp(3rem, 7vw, 6rem); }
-    .hero img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 48% 48% 1.25rem 1.25rem; background: var(--sage); }
-    h1, h2, h3 { margin: 0; font-family: Georgia, serif; font-weight: normal; line-height: 1.08; }
-    h1 { max-width: 11ch; font-size: clamp(3rem, 7.2vw, 6.2rem); letter-spacing: -.065em; }
-    h2 { font-size: clamp(2.15rem, 4.7vw, 3.75rem); letter-spacing: -.045em; }
-    h3 { font-size: 1.55rem; }
-    p { margin: .65rem 0 0; }
-    .label { margin: 0 0 .8rem; font-size: .78rem; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
-    .intro { max-width: 46ch; margin-block: 1.25rem 1.5rem; font-size: 1.125rem; }
-    .button { display: inline-block; padding: .68rem 1.2rem; border: 1px solid transparent; border-radius: 2rem; background: var(--forest); color: white; font-weight: 650; text-decoration: none; }
-    .button:hover { background: #3c5b45; }
-    .secondary { background: transparent; color: var(--forest); border-color: currentColor; }
+    .nav, .nav nav, .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.5rem; }
+    .nav { justify-content: space-between; padding-block: 1.35rem; }
+    .nav nav { font-size: .9rem; }
+    .nav nav a { text-decoration: none; }
+    .nav nav a:hover { text-decoration: underline; text-underline-offset: .3em; }
+    .brand { display: inline-flex; align-items: center; gap: .65rem; font: 1.7rem/1 var(--display); text-decoration: none; }
+    .brand img { border-radius: .4rem; }
+    .hero, .about { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 7vw, 6rem); align-items: center; }
+    .section { padding-block: clamp(3.75rem, 8vw, 7rem); }
+    .hero { padding-block: clamp(3rem, 6vw, 5rem); }
+    .hero img { display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: .25rem; background: var(--sage); }
+    h1, h2, h3 { margin: 0; font-family: var(--display); font-weight: 400; line-height: .98; }
+    h1 { font-size: clamp(3.55rem, 8vw, 7.25rem); }
+    h1 em { color: var(--olive); font-weight: inherit; }
+    h2 { font-size: clamp(2.8rem, 5.2vw, 4.65rem); }
+    h3 { font-size: clamp(1.55rem, 2.6vw, 2.15rem); }
+    p { margin: .8rem 0 0; max-width: 62ch; }
+    .label { margin: 0 0 1.15rem; font-size: .73rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .intro { max-width: 40ch; margin-block: 1.4rem 1.8rem; color: var(--muted); font-size: 1.1rem; }
+    .button { display: inline-block; padding: .75rem 1.3rem; border: 1px solid transparent; border-radius: 3rem; background: var(--olive); color: white; font-size: .92rem; font-weight: 600; text-decoration: none; }
+    .button:hover { background: var(--ink); }
+    .secondary { background: transparent; color: var(--olive); border-color: currentColor; }
     .secondary:hover { background: var(--sage); }
     .band { background: var(--sage); }
-    .grid { display: grid; gap: 1rem; margin-block: 1.75rem 0; padding: 0; }
+    #servicios { background: var(--paper); border-block: 1px solid var(--line); }
+    .grid { display: grid; gap: 1.65rem; margin-block: 2rem 0; padding: 0; }
     .four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
     .three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .card { list-style: none; background: var(--paper); border: 1px solid var(--line); border-radius: .9rem; padding: clamp(1rem, 2.2vw, 1.55rem); }
-    .method-letter { display: block; margin-bottom: .65rem; font: 3.3rem/.9 Georgia, serif; color: #496247; }
-    .guide-card { padding: clamp(1.4rem, 5vw, 3rem); border-radius: 1rem; background: var(--forest); color: white; }
-    .guide-card h3 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
-    .guide-card .button { background: var(--paper); color: var(--forest); }
-    .guide-card .button:hover { background: var(--sage); }
-    .price { margin: 0 0 .6rem; font-size: 1.35rem; font-weight: 750; }
-    .note { margin-block: .7rem 0; font-size: .9rem; }
-    footer { border-top: 1px solid var(--line); padding-block: 1.2rem; font-size: .9rem; }
+    .card { list-style: none; border-top: 1px solid #b8c0af; padding-block: 1.25rem 0; }
+    .card p { color: var(--muted); }
+    .method-letter { display: block; margin-bottom: .8rem; font: italic 3rem/1 var(--display); color: var(--olive); }
+    .guide-card { margin-top: 2.5rem; padding: clamp(1.5rem, 5vw, 3rem); border-radius: .25rem; background: var(--sage); }
+    .guide-card h3 { font-size: clamp(2.1rem, 4.15vw, 3.55rem); }
+    .price { margin: 0 0 .65rem; font-size: 1.2rem; font-weight: 700; }
+    .note, footer { color: var(--muted); font-size: .9rem; }
+    footer { padding-block: 1.5rem; }
     @media (max-width: 850px) { .four, .three { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 620px) {
-      .wrap { width: calc(100% - 2rem); }
-      .hero, .about, .four, .three { grid-template-columns: 1fr; }
-      .hero img { max-width: 26rem; }
+    @media (max-width: 650px) {
+      .wrap { width: calc(100% - 2.5rem); }
+      .nav { align-items: flex-start; flex-direction: column; }
+      .nav nav { gap: .55rem 1rem; }
+      .hero, .about { grid-template-columns: 1fr; }
+      .hero img { max-height: 34rem; }
     }
+    @media (max-width: 420px) { .four, .three { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body id="inicio">
@@ -70,14 +88,14 @@
     <section class="wrap hero" aria-labelledby="titulo">
       <div>
         <p class="label">Karina López · Health Coach</p>
-        <h1 id="titulo">Volver a ti desde la raíz</h1>
+        <h1 id="titulo">Volver a ti <em>desde la raíz</em></h1>
         <p class="intro">Cuatro semanas para escuchar las señales de tu cuerpo, cuidar tu alimentación y construir hábitos que puedas sostener en tu vida diaria.</p>
         <div class="actions">
           <a class="button" href="#enfoque">Conoce el Método RAÍZ</a>
           <a class="button secondary" href="#contacto">Hablemos</a>
         </div>
       </div>
-      <img src="./bienestar.jpg" width="900" height="900" alt="Ensalada con vegetales frescos">
+      <img src="./bienestar.jpg?v=wellness" width="1100" height="1375" alt="Cuenco de cerámica con ramas de olivo y lino a la luz del sol">
     </section>
 
     <section class="band section" id="enfoque" aria-labelledby="metodo-titulo">
