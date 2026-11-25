@@ -33,7 +33,8 @@
     .guide { padding-block: clamp(3rem, 7vw, 5rem); }
     .guide-card { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1.5rem 3rem; padding: clamp(1.5rem, 5vw, 3.5rem); border: 1px solid var(--line); border-radius: 1rem; }
     .guide-description { max-width: 48ch; margin: 1rem 0 0; }
-    .guide-status { margin: 0; }
+    .preview-note { margin: 0 0 .5rem; font-size: .875rem; }
+    .guide-price { margin: 0 0 .75rem; font-size: 1.4rem; font-weight: 700; }
     .guide [hidden] { display: none; }
     footer { padding-block: 1.4rem; font-size: .9rem; }
     @media (max-width: 720px) {
@@ -69,32 +70,21 @@
         </div>
       </div>
     </section>
-    <!-- Añade la URL HTTPS de compra a data-checkout-url cuando el producto esté publicado. -->
-    <section class="wrap guide" id="fermentados" aria-labelledby="fermentados-titulo" data-checkout-url="">
+    <section class="wrap guide" id="fermentados" aria-labelledby="fermentados-titulo">
       <div class="guide-card">
         <div>
           <p class="label">Guía digital · PDF</p>
           <h2 id="fermentados-titulo">Guía de fermentados</h2>
-          <p class="guide-description">Explora el mundo de los fermentados con una guía que podrás descargar en tu computadora después de la compra.</p>
+          <p class="guide-description">Una guía de fermentados para principiantes en formato PDF.</p>
         </div>
         <div>
-          <p class="guide-status">Disponible próximamente</p>
-          <a class="button guide-checkout" hidden>Comprar la guía</a>
+          <p class="preview-note">Vista previa · Sin cobro</p>
+          <p class="guide-price">$5.99 USD</p>
+          <a class="button" href="https://drive.google.com/uc?export=download&amp;id=1dDw4OhglYPOjlJB6ZYkbgUa4K3JFG7WL">Descargar PDF</a>
         </div>
       </div>
     </section>
   </main>
   <footer class="wrap">Bienestar en equilibrio · Health Coaching</footer>
-  <script>
-    const guide = document.querySelector("#fermentados");
-    const checkoutUrl = guide.dataset.checkoutUrl.trim();
-
-    if (URL.canParse(checkoutUrl) && new URL(checkoutUrl).protocol === "https:") {
-      const checkout = guide.querySelector(".guide-checkout");
-      checkout.href = checkoutUrl;
-      checkout.hidden = false;
-      guide.querySelector(".guide-status").hidden = true;
-    }
-  </script>
 </body>
 </html>
